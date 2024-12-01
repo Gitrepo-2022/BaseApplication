@@ -1,0 +1,106 @@
+﻿/*table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    background-color: #fff;
+}*/
+
+
+.PagerTask a, .Pager a {
+    cursor: pointer;
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #6c757d;
+    text-decoration: none;
+    background-color: #fff;
+}
+.PagerTask a:hover, .Pager a:hover {
+    z-index: 3;
+    color: #6c757d;
+    background-color: #eee;
+    border-color: #ddd;
+}
+.PagerTask span, .Pager span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #6c757d;
+    text-decoration: none;
+    color: white !important;
+    cursor: default;
+    background-color: #776acf;
+}
+
+.PagerTask b,.Pager b {
+    float: right;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+#SearchString {
+    margin-top: 10px;
+}
+
+
+.form-control {
+    border-radius: 3px;
+    background: #fff;
+    border: 1px solid #dde6e9;
+    padding: 10px 15px;
+}
+.dropdown.form-control {
+    padding: 0;
+    background: transparent;
+    margin: 0;
+}
+
+    .dropdown.form-control .btn.dropdown-toggle {
+        background: #fff;
+        margin: 0px;
+        border: 1px solid #dde6e9;
+        padding: 7px 15px;
+    }
+.bootstrap-select .dropdown-toggle:before {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 6px dashed;
+    border-top: 6px solid\9;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+.btn-round {
+    border-radius: 3px !important;
+}
+
+.btn {
+    border-radius: 3px;
+    font-size: 16px;
+    -webkit-appearance: none;
+    outline: none !important;
+    transition: all 0.1s;
+    padding: 10px 15px;
+    margin: 0;
+    background: transparent;
+    font-size: larger;
+    font-weight: 600;
+}
+.nxtpre button:hover {
+    background: none;
+    box-shadow: none;
+    transform: scale(1.2);
+}
+
+input[type=date]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    display: none;
+}
+
+
+
+

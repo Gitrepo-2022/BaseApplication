@@ -1,0 +1,99 @@
+﻿@model BaseApplication.Domains.ForgetPassword
+
+@{
+    Layout = null;
+
+}
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<style>
+    input[type="checkbox"] {
+        accent-color: #776acf;
+        width: 15px;
+        height: 15px;
+    }
+
+    @@media screen and (max-width:500px) {
+        h5 {
+            font-size: 17px;
+        }
+
+        label {
+            font-size: 14px;
+        }
+
+        .form-control {
+            font-size: 14px !important;
+        }
+
+        button {
+            font-size: 14px;
+        }
+
+        .img {
+            height: 14%;
+            width: 20%;
+        }
+    }
+
+    .Login_content {
+        padding: 30px 20px;
+    }
+
+    .input-group_css {
+        display: flex;
+    }
+
+    .Login_content {
+        background: white;
+    }
+
+    input.pw {
+        -webkit-text-security: disc;
+    }
+
+    .img {
+        height: 22%;
+        width: 18%;
+    }
+
+    .error-font-size {
+        color: red;
+    }
+
+    .btn_css {
+        width: 100%;
+        background-color: #776acf;
+        border: 1px solid #776acf;
+    }
+
+    .btn-primary:hover {
+        color: #fff;
+        background-color: #776acf;
+        border-color: #776acf;
+    }
+
+</style>
+<body style=" overflow:hidden; background-color: #776acfad; background-image: linear-gradient(to right, #776acf66, white)">
+    <div class="Main_container">
+        <div class="container">
+            <div class="row justify-content-center align-content-center" style="margin-top:8%;height:700px;">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="Login_content container-fluid" style="padding:40px 20px;">
+                        <div class="text-center mb-3">
+                            <p> <strong>Link Sent Successfully </strong></p>
+                        </div>
+                        <div class="mt-4">
+                            <a href="/Account/Login" class="btn btn-primary btn_css">
+                                <small style="font-size:16px;">
+                                    Login
+                                </small>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

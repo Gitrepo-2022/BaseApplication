@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseApplication.Web", "BaseApplication\BaseApplication.Web.csproj", "{55A96E35-1E7D-44C6-A111-BCE5BB797591}"
+	ProjectSection(ProjectDependencies) = postProject
+		{11244ACD-2F58-421C-A49E-4DA633D0BD08} = {11244ACD-2F58-421C-A49E-4DA633D0BD08}
+		{6A81767F-9200-45B3-AEE3-F27A69B06089} = {6A81767F-9200-45B3-AEE3-F27A69B06089}
+		{90C63C9F-E33E-4505-9AB3-0CCD1A67B9FC} = {90C63C9F-E33E-4505-9AB3-0CCD1A67B9FC}
+		{989D17ED-7662-4696-8672-6FAA297005BB} = {989D17ED-7662-4696-8672-6FAA297005BB}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseApplication.Domains", "BaseApplication.Domains\BaseApplication.Domains.csproj", "{90C63C9F-E33E-4505-9AB3-0CCD1A67B9FC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{989D17ED-7662-4696-8672-6FAA297005BB} = {989D17ED-7662-4696-8672-6FAA297005BB}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseApplication.Services", "BaseApplication.Services\BaseApplication.Services.csproj", "{6A81767F-9200-45B3-AEE3-F27A69B06089}"
+	ProjectSection(ProjectDependencies) = postProject
+		{11244ACD-2F58-421C-A49E-4DA633D0BD08} = {11244ACD-2F58-421C-A49E-4DA633D0BD08}
+		{90C63C9F-E33E-4505-9AB3-0CCD1A67B9FC} = {90C63C9F-E33E-4505-9AB3-0CCD1A67B9FC}
+		{989D17ED-7662-4696-8672-6FAA297005BB} = {989D17ED-7662-4696-8672-6FAA297005BB}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseApplication.Repository", "BaseApplication.Repository\BaseApplication.Repository.csproj", "{11244ACD-2F58-421C-A49E-4DA633D0BD08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseApplication.Utility", "BaseApplication.Utility\BaseApplication.Utility.csproj", "{989D17ED-7662-4696-8672-6FAA297005BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55A96E35-1E7D-44C6-A111-BCE5BB797591}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55A96E35-1E7D-44C6-A111-BCE5BB797591}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55A96E35-1E7D-44C6-A111-BCE5BB797591}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55A96E35-1E7D-44C6-A111-BCE5BB797591}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90C63C9F-E33E-4505-9AB3-0CCD1A67B9FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90C63C9F-E33E-4505-9AB3-0CCD1A67B9FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90C63C9F-E33E-4505-9AB3-0CCD1A67B9FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90C63C9F-E33E-4505-9AB3-0CCD1A67B9FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A81767F-9200-45B3-AEE3-F27A69B06089}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A81767F-9200-45B3-AEE3-F27A69B06089}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A81767F-9200-45B3-AEE3-F27A69B06089}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A81767F-9200-45B3-AEE3-F27A69B06089}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11244ACD-2F58-421C-A49E-4DA633D0BD08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11244ACD-2F58-421C-A49E-4DA633D0BD08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11244ACD-2F58-421C-A49E-4DA633D0BD08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11244ACD-2F58-421C-A49E-4DA633D0BD08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{989D17ED-7662-4696-8672-6FAA297005BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{989D17ED-7662-4696-8672-6FAA297005BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{989D17ED-7662-4696-8672-6FAA297005BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{989D17ED-7662-4696-8672-6FAA297005BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C003E257-67A8-40C3-9CFE-EA4F057247D1}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,168 @@
+﻿@model BaseApplication.Domains.ViewModels.UserUIModel
+@{
+    Layout = "_Layout";
+}
+
+<html class="supernova" lang="en">
+<head>
+    <link href="~/css/Formstyle.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+</head>
+<body style="background-color:transparent;">
+    <form class="Main-form" asp-action="CreateUser" asp-controller="Account" method="post">
+        <input type="hidden" asp-for="Id" value="@Model.Id" id="UserId" />
+        <input type="hidden" asp-for="AspNetUserId" value="@Model.AspNetUserId" id="AspNetUserId" />
+        <div class="form-all">
+            <div class="Main_input">
+
+                <div class="row mt-3">
+                    <div class="col-12 col-sm-6">
+                        <label class="form-label form-label-top form-label-auto">
+                         FirstName<span class="form-required">*</span>
+                        </label>
+                        <div class="form-input-wide jf-required">
+                            <div>
+                                <span class="form-sub-label-container">
+                                    
+                                    <input type="text" asp-for="FirstName" id="username" class="form-control field-validation-error">
+                                </span>
+                                <span asp-validation-for="FirstName" style="font-size:80%" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="form-input-wide jf-required">
+                            <label class="form-label form-label-top form-label-auto">
+                                LastName<span class="form-required">*</span>
+                            </label>
+                            <div class="form-input-wide jf-required">
+                                <div>
+                                    <span class="form-sub-label-container">
+                                        <input type="text" id="LastName" name="LastName" value="@Model.LastName" class="form-control js_valdiation">
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <label class="form-label form-label-top form-label-auto">
+                           Email<span class="form-required">*</span>
+                        </label>
+                        <div class="form-input-wide jf-required">
+                            <div>
+                                <span class="form-sub-label-container">
+                                    <input type="text" id="Email" name="Email" value="@Model.Email" class="form-control js_valdiation" onblur="jsValidation(this)">
+                                </span>
+
+                            </div>
+                        </div>
+                    </div>
+                  
+                    <div class="col-12 col-sm-6">
+                        <label class="form-label form-label-top form-label-auto">
+                            City<span class="form-required">*</span>
+                        </label>
+                        <div class="form-input-wide jf-required">
+                            <div>
+                                <span class="form-sub-label-container">
+                                    <input type="text" id="City" name="City" value="@Model.City" class="form-control js_valdiation">
+                                </span>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <label class="form-label form-label-top form-label-auto">
+                           State<span class="form-required">*</span>
+                        </label>
+                        <div class="form-input-wide jf-required">
+                            <div>
+                                <span class="form-sub-label-container">
+                                    <input type="text" id="State" name="State" value="@Model.State" class="form-control js_valdiation">
+                                </span>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <label class="form-label form-label-top form-label-auto">
+                          ZipCode<span class="form-required">*</span>
+                        </label>
+                        <div class="form-input-wide jf-required">
+                            <div>
+                                <span class="form-sub-label-container">
+                                    <input type="text" id="Zipcode" name="Zipcode" value="@Model.State" class="form-control js_valdiation">
+                                </span>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <label class="form-label form-label-top form-label-auto">
+                            Address<span class="form-required">*</span>
+                        </label>
+                        <div class="form-input-wide jf-required">
+                            <div>
+                                <span class="form-sub-label-container">
+                                    <input type="text" id="Address" name="Address" value="@Model.Address" class="form-control js_valdiation">
+                                </span>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <label class="form-label form-label-top form-label-auto">
+                            PhoneNumber<span class="form-required">*</span>
+                        </label>
+                        <div class="form-input-wide jf-required">
+                            <div>
+                                <span class="form-sub-label-container">
+                                    <input type="text" id="ContactNumber" name="ContactNumber" value="@Model.ContactNumber" class="form-control js_valdiation">
+                                </span>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <label class="form-label form-label-top form-label-auto">
+
+                        </label>
+                        <div class="form-input-wide jf-required">
+                            <div class="mt-5">
+                                <span class="form-sub-label-container">
+                                    <strong>
+                                        <input type="checkbox" class="checkbox-input" asp-for="IsActive" id="Active" checked="">Active
+
+@*                                        <input type="checkbox" id="Active" value="@Model.IsActive" class="form-control js_valdiation" checked="@Model.IsActive" style="margin-right:10px;width:16px;height:16px;">
+*@                                        @*<input type="checkbox" asp-for="IsActive" checked id="Active" name="Active" value="@Model.IsActive" class="js_valdiation" style="margin-right:10px;width:16px;height:16px;">Active*@
+                                    </strong>
+                                </span>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <label class="form-label form-label-top form-label-auto">
+
+                        </label>
+                        <div class="form-input-wide jf-required">
+                            <div class="mt-4">
+                                <span class="form-sub-label-container">
+                                    <button type="submit"  class="btn btn-primary" style="margin-right:8px;">Submit</button>
+                                </span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+  
+
+</body>
+</html>

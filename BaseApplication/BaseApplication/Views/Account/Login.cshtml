@@ -1,0 +1,222 @@
+﻿@model BaseApplication.Domains.ViewModels.Login
+
+@{
+    Layout = null;
+}
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<style>
+    input[type="checkbox"] {
+        accent-color: #776acf;
+        width: 15px;
+        height: 15px;
+    }
+
+    @@media screen and (max-width:500px) {
+        h5 {
+            font-size: 17px;
+        }
+
+        label {
+            font-size: 14px;
+        }
+
+        .form-control {
+            font-size: 14px !important;
+        }
+
+        button {
+            font-size: 14px;
+        }
+
+        .img {
+            height: 14%;
+            width: 20%;
+        }
+    }
+
+    .Login_content {
+        padding: 30px 20px;
+    }
+
+    .input-group_css {
+        display: flex;
+    }
+
+    .Login_content {
+        background: white;
+    }
+
+    input.pw {
+        -webkit-text-security: disc;
+    }
+
+    .img {
+        height: 22%;
+        width: 18%;
+    }
+
+    .error-font-size {
+        color: red;
+    }
+
+    .btn_css {
+        width: 100%;
+        background-color: #776acf;
+        border: 1px solid #776acf;
+    }
+
+    .btn-primary:hover {
+        color: #fff;
+        background-color: #776acf;
+        border-color: #776acf;
+    }
+    /*toaggle switch */
+
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 75px;
+        height: 25px;
+    }
+
+        .switch input {
+            display: none;
+        }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: gray;
+        -webkit-transition: .4s;
+        transition: .4s;
+        border-radius: 34px;
+    }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 19px;
+            width: 19px;
+            left: 1px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+    input:checked + .slider {
+        background-color: #776acf;
+    }
+
+    input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(55px);
+    }
+
+    /*------ ADDED CSS ---------*/
+    .slider:after {
+        content: 'ES';
+        color: white;
+        display: block;
+        position: absolute;
+        transform: translate(-50%,-50%);
+        top: 50%;
+        left: 50%;
+        font-size: 13px;
+        font-family: Verdana, sans-serif;
+    }
+
+    input:checked + .slider:after {
+        content: 'EN';
+    }
+
+    .input-group_css {
+        display: flex;
+    }
+    /*--------- END --------*/
+
+</style>
+<body style=" overflow:hidden; background-color: #776acfad; background-image: linear-gradient(to right, #776acf66, white)">
+    <div class="Main_container">
+        <div class="container">
+            <div class="row justify-content-center align-content-center" style="margin-top:8%;">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="Login_content container-fluid">
+
+                        <div class="text-center mb-3">
+                            <img src="" style="width:20%; height:20%;" />
+                        </div>
+                        <div class="">
+                            <div class="card-title">
+                                <h5 class="text-center pb-1" style="color:#3b1c54;">Login</h5>
+                            </div>
+                            <form role="form" asp-action="Login" asp-controller="Account" method="post">
+                                <div class="text-center" style="margin: 10px 0;">
+                                    <span class="error-font-size"><strong>@ViewBag.Message</strong></span>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label class="text-bold-600 login_font mb-2 lbl_css" for="Email">Email</label>
+                                    <input type="text" name="Email" asp-for="Email" autocomplete="off" class="form-control" placeholder="Email">
+                                    <span asp-validation-for="Email" style="font-size:80%" class="text-danger"></span>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label class="text-bold-600 login_font mb-2 lbl_css" for="Password">Password</label>
+                                    <div class="input-group_css">
+                                        <input type="text" name="Password" asp-for="Password" autocomplete="off" class="pw form-control" placeholder="Password">
+                                        <div class="input-group-append" style="border:1px solid #ced4da;">
+                                            <i class="fa fa-eye-slash view_contract" style="padding:10px;" onclick="ShowPassword(this)" id="togglePassword"></i>
+                                        </div>
+                                    </div>
+                                    <span asp-validation-for="Password" style="font-size:80%" class="text-danger"></span>
+
+                                </div>
+                                <div class="form-group d-flex flex-md-row flex-column justify-content-between align-items-center mb-3">
+                                    <div class="text-left">
+                                        <div class="checkbox checkbox-sm lbl_css">
+                                            <input type="checkbox" class="checkbox-input" asp-for="RememberMe" id="RememberMe" checked="">
+                                            <label asp-for="RememberMe"><small class="login_font"> RememberMe</small></label>
+                                        </div>
+                                    </div>
+                                    <div class="text-right"><a href="@Url.Action("ForgotPassword", "Account")" class="card-link mr-3"><small class="primary">ForgotPassword?</small></a></div>
+                                </div>
+                                <div class="btn_div text-center" style="margin:10px 0px;">
+                                    <button type="submit" class="btn btn-primary btn_css">Login<i id="icon-arrow" class="bx bx-right-arrow-alt arrow-end"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    function ShowPassword(th) {
+        var togglePassword = $("#togglePassword");
+        var password = $("#Password");
+        if (togglePassword.hasClass('fa-eye-slash')) {
+            togglePassword.removeClass('fa-eye-slash');
+            togglePassword.addClass('fa-eye');
+            password.removeClass('pw');
+        } else {
+            togglePassword.removeClass('fa-eye');
+            togglePassword.addClass('fa-eye-slash');
+            password.addClass('pw');
+        }
+    }
+</script>
