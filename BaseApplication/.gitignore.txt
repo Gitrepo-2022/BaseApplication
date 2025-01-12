@@ -1,6 +1,12 @@
-.vs
-bin\
-obj
-obj\
-bin
+# Ignore .vs folder (Visual Studio)
+.vs/
+
+# Ignore obj and bin folders in any subdirectory
+**/obj/
+**/bin/
+
+# Ignore .code-workspace files
+*.code-workspace
+
+# Ignore .user files
 *.csproj.user
